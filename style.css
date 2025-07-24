@@ -7,23 +7,27 @@
 }
 
 body {
-    background-color: #fff8f0;
+    background-color: #f5f1eb;
     color: #333;
     line-height: 1.6;
 }
 
+/* Header */
 header {
-    background-color: #6f4e37;
-    color: white;
+    background-color: #ffffffcc;
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    flex-wrap: wrap;
 }
 
 header h1 {
     font-size: 1.5rem;
+    color: #5a3e2b;
 }
 
 header ul {
@@ -33,119 +37,154 @@ header ul {
 }
 
 header ul li a {
-    color: white;
+    color: #5a3e2b;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
     transition: color 0.3s;
 }
 
 header ul li a:hover {
-    color: #ffd700;
+    color: #d17a00;
 }
 
+/* Hero */
 .page-hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: url('https://source.unsplash.com/1600x600/?coffee') center/cover no-repeat;
+    background: url('https://source.unsplash.com/1600x800/?coffee,cup') center/cover no-repeat;
     color: white;
+    text-align: center;
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.page-hero h1, .page-hero h3, .page-hero button {
+    position: relative;
+    z-index: 1;
 }
 
 .page-hero h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
     margin-bottom: 1rem;
-    text-shadow: 1px 1px 4px #000;
 }
 
 .page-hero h3 {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 3px #000;
+    max-width: 600px;
+    margin: 0 auto 2rem;
 }
 
 .page-hero button {
     padding: 0.8rem 1.5rem;
-    background-color: #ffd700;
+    background-color: #f08a24;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-weight: bold;
+    color: white;
     cursor: pointer;
     transition: background 0.3s;
 }
 
 .page-hero button:hover {
-    background-color: #e5c100;
+    background-color: #d17a00;
 }
 
+/* Seção Cardápio */
 .section-cardapio {
-    padding: 3rem 2rem;
+    background-color: #f5f1eb;
+    padding: 4rem 2rem;
     text-align: center;
-    background-color: #fff;
 }
 
 .section-cardapio h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #6f4e37;
+    font-size: 2rem;
+    color: #5a3e2b;
+    margin-bottom: 2rem;
 }
 
 .section-cardapio ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
     list-style: none;
-    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .section-cardapio ul li {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
+    background: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    font-weight: 500;
+    color: #5a3e2b;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.section-cardapio ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Contato */
 .contact-section {
-    padding: 2rem;
+    background-color: #ffffff;
+    padding: 4rem 2rem;
     text-align: center;
-    background-color: #f5ebe0;
 }
 
 .contact-section h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: #5a3e2b;
+    margin-bottom: 1rem;
+}
+
+.contact-section p {
+    font-size: 1rem;
+    color: #555;
     margin-bottom: 1rem;
 }
 
 .contact-section a {
     display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #6f4e37;
+    padding: 0.8rem 1.5rem;
+    background-color: #f08a24;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
+    font-weight: bold;
     transition: background 0.3s;
 }
 
 .contact-section a:hover {
-    background-color: #593c2b;
+    background-color: #d17a00;
 }
 
+/* Footer */
 footer {
+    background-color: #5a3e2b;
+    color: white;
     text-align: center;
     padding: 1rem;
-    background-color: #6f4e37;
-    color: white;
     font-size: 0.9rem;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-    header {
+/* Responsivo */
+@media (max-width: 768px) {
+    .section-cardapio ul {
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header ul {
-        flex-direction: column;
-        width: 100%;
+        align-items: center;
     }
 
     .page-hero h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .page-hero h3 {
