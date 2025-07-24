@@ -149,6 +149,25 @@ header ul li a:hover {
     padding: 0 1rem 1rem;
 }
 
+/*Estilização de botão*/
+.button {
+    display: inline-block;
+    background-color: #e17b00;
+    color: white;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1rem;
+}
+
+.button:hover {
+    background-color: #cc6f00;
+    transform: translateY(-2px);
+}
+
+
 
 /* Contato */
 .contact-section {
@@ -193,7 +212,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsivo */
+/* Responsividade */
 @media (max-width: 768px) {
     .section-cardapio ul {
         flex-direction: column;
